@@ -7,7 +7,10 @@ class TestCase():
         self.steps[step_number] = step_text
         
     def delete_step(self, step_number):
-        del self.steps[step_number]
+        if step_number in self.steps:
+            del self.steps[step_number]
+        else:
+            print('Ошибка. Данный шаг отсутствует.')
         
     def set_result(self, result):
         self.result = result
